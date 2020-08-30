@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8" >
+    <title >{% block title %}Agence GreenPrint{% endblock %}</title >
+    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/material-dashboard@2.1.0/assets/css/material-dashboard.css" >
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" >
+</head >
+<body >
+
+<nav class="navbar fixed-top navbar-expand-lg
+{% if primary_color is defined and primary_color =='active' %} bg-primary {% else %} bg-success {% endif %} "
+     style="margin-bottom: 50px" >
+    <a class="navbar-brand" href="{{ path('home') }}" >
+        <strong >Agence greenPrint</strong >
+    </a >
+
+    <div class="collapse navbar-collapse" >
+        <ul class="navbar-nav mr-auto" >
+            <li class="nav-item" >
+                <a class="nav-link {% if current_menu is defined and current_menu == 'properties' %}active{% endif %}"
+                   href="{{ path('house.index') }}" >
+                    House
+                </a >
+            </li >
+        </ul >
+    </div >
+</nav >
+
+{% block body %}{% endblock %}
+
+<footer class="footer fixed-bottom" style="background-color: rgba(255,255,255,0.8);" >
+    <div class="container" >
+        <hr class="{% if primary_color is defined and primary_color =='active' %} bg-primary {% else %} bg-success {% endif %}" >
+        <div class="copyright float-left" >
+            &copy; 2020, made with
+            <i class="material-icons" >
+                favorite
+            </i >
+            and Symfony 5.1.* by
+            <a class="{% if primary_color is defined and primary_color =='active' %} text-primary {% else %} text-success {% endif %}"
+               href="https://fillatredav.fr" target="_blank" >Daviani</a >
+        </div >
+        <div class="copyright float-right" >
+            <a class="{% if primary_color is defined and primary_color =='active' %} text-primary {% else %} text-success {% endif %}"
+               href="{{ path('house.index') }}" >
+                Admin panels
+            </a >
+        </div >
+    </div >
+</footer >
+
+{% block javascripts %}{% endblock %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous" ></script >
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous" ></script >
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous" ></script >
+</body >
+</html >
+
+
