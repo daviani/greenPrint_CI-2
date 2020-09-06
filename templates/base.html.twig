@@ -23,8 +23,8 @@
         <ul class="navbar-nav mr-auto" >
             <li class="nav-item" >
                 <a class="nav-link {% if current_menu is defined and current_menu == 'properties' %}active{% endif %}"
-                   href="{{ path('house.index') }}" >
-                    House
+                   href="{{ path('property.index') }}" >
+                    Houses
                 </a >
             </li >
         </ul >
@@ -47,7 +47,7 @@
         </div >
         <div class="copyright float-right" >
             <a class="{% if primary_color is defined and primary_color =='active' %} text-primary {% else %} text-success {% endif %}"
-               href="{{ path('house.index') }}" >
+               href="{{ path('property.index') }}" >
                 Admin panels
             </a >
         </div >
