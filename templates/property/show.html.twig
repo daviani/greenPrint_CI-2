@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block title property.title %}
+
+{% block body %}
+
+    <div class="container mt-4 card" style="margin-top: 110px!important;">
+        <div class="row">
+            <div class="col-md-7">
+
+            </div>
+            <div class="col-md-5 text-center">
+                <h1 class="display-3 card-header mt-2">
+                    {{ property.title }}
+                </h1>
+                <div class="display-4">
+                    <div class="mt-2">{{ property.rooms }} rooms</div>
+                    <div class="mt-2">{{ property.surface }} m²</div>
+                    <div class="text-primary mt-2">
+                        <strong>{{ property.formattedPrice }} €</strong>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary rounded mt-4">contact us</a>
+                </div>
+            </div>
+        </div>
+        <hr class="bg-primary ">
+        <p class="text-center p-3">
+            <I>{{ property.description |nl2br }}</I>
+        </p>
+        <hr class="bg-primary ">
+        <div class="row">
+            <div class="col-md-5">
+                <h2>Specificity </h2>
+            </div>
+            <div class="col-md-7">
+                <h2>Characteristic</h2>
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-primary">
+                    More information
+                    </thead>
+                    <tr>
+                        <td>Living area</td>
+                        <td>{{ property.surface }}m²</td>
+                    </tr>
+                    <tr>
+                        <td>Rooms</td>
+                        <td>{{ property.rooms }}</td>
+                    </tr>
+                    <tr>
+                        <td>Bedrooms</td>
+                        <td>{{ property.bedrooms }}</td>
+                    </tr>
+                    <tr>
+                        <td>Floors</td>
+                        <td>{{ property.floor }}</td>
+                    </tr>
+                    <tr>
+                        <td>Heat</td>
+                        <td>{{ property.heatType }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-100" style="height: 100px"></div>
+{% endblock %}
+
+
